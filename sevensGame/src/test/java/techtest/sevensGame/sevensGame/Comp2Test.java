@@ -32,10 +32,10 @@ public class Comp2Test
 		diamonds = comp2.findSuitCards(comp2Hand, Suits.DIAMONDS);
 		spades = comp2.findSuitCards(comp2Hand, Suits.SPADES);
 		
-		assertEquals(2, hearts.size());
-		assertEquals(1, clubs.size());
-		assertEquals(1, diamonds.size());
-		assertEquals(1, spades.size());
+		assertEquals("Size of hearts should be 2", 2, hearts.size());
+		assertEquals("Size of clubs should be 1", 1, clubs.size());
+		assertEquals("Size of diamonds should be 1", 1, diamonds.size());
+		assertEquals("Size of spades should be 1", 1, spades.size());
 				
 	}
 	
@@ -58,8 +58,8 @@ public class Comp2Test
 	    clubsWeight = Comp2.findWeighting(clubs);
 	    
 	    //Double has precision loss, so have to add a delta for precision loss
-	    assertEquals(1.7, heartsWeight, 0.00001);
-	    assertEquals(1.0, clubsWeight, 0.00001);
+	    assertEquals("heartsWeight should be 1.7", 1.7, heartsWeight, 0.00001);
+	    assertEquals("clubsWeight should be 1.0", 1.0, clubsWeight, 0.00001);
 	}
 	
 	@Test
@@ -76,9 +76,9 @@ public class Comp2Test
 		
 		boolean played = comp2.playCard(handDiamonds, diamonds);
 		
-		assertEquals(true, played);
-		assertEquals(0, handDiamonds.size());
-		assertEquals(2, diamonds.size());
+		assertEquals("playCard should return true", true, played);
+		assertEquals("handDiamonds should be empty", 0, handDiamonds.size());
+		assertEquals("Size of diamonds shouldbe 2", 2, diamonds.size());
 	}
 
 }

@@ -18,8 +18,8 @@ public class HandTest
 		
 		deck.createDeck();
 		ArrayList<Card> testHand = hand.createHand(deck.getDeck(), handTotal);
-		assertEquals(handTotal, testHand.size());
-		assertEquals(52 - handTotal, deck.getDeck().size());
+		assertEquals("Size of hand shoukd match handTotal", handTotal, testHand.size());
+		assertEquals("deck size should have reduced by handTotal value", 52 - handTotal, deck.getDeck().size());
 	}
 	
 	@Test
@@ -38,19 +38,19 @@ public class HandTest
 		//Check first cards are less than second cards 
 		if(testHand1.get(0).getSuit() == Suits.HEARTS && testHand1.get(1).getSuit() == Suits.HEARTS) {
 			boolean lessThan = testHand1.get(0).getValue() < testHand1.get(1).getValue();
-			assertEquals(true, lessThan);
+			assertEquals("First heart should have lower value than second",true, lessThan);
 		}
 		if(testHand1.get(0).getSuit() == Suits.CLUBS && testHand1.get(1).getSuit() == Suits.CLUBS) {
 			boolean lessThan = testHand1.get(0).getValue() < testHand1.get(1).getValue();
-			assertEquals(true, lessThan);
+			assertEquals("First club should have lower value than second", true, lessThan);
 		}
 		if(testHand1.get(0).getSuit() == Suits.DIAMONDS && testHand1.get(1).getSuit() == Suits.DIAMONDS) {
 			boolean lessThan = testHand1.get(0).getValue() < testHand1.get(1).getValue();
-			assertEquals(true, lessThan);
+			assertEquals("First diamond should have lower value than second", true, lessThan);
 		}
 		if(testHand1.get(0).getSuit() == Suits.SPADES && testHand1.get(1).getSuit() == Suits.SPADES) {
 			boolean lessThan = testHand1.get(0).getValue() < testHand1.get(1).getValue();
-			assertEquals(true, lessThan);
+			assertEquals("First spade should have lower value than second", true, lessThan);
 		}
 	}
 	
@@ -68,10 +68,10 @@ public class HandTest
 		ArrayList<Card> testHand2 = hand.createHand(deck.getDeck(), handTotal2);
 		ArrayList<Card> testHand3 = hand.createHand(deck.getDeck(), handTotal3);
 		
-		assertEquals(handTotal1, testHand1.size());
-		assertEquals(handTotal2, testHand2.size());
-		assertEquals(handTotal3, testHand3.size());
-		assertEquals(0, deck.getDeck().size());
+		assertEquals("testHand1 size should match handTotal1", handTotal1, testHand1.size());
+		assertEquals("testHand2 size should match handTotal2", handTotal2, testHand2.size());
+		assertEquals("testHand3 size should match handTotal3", handTotal3, testHand3.size());
+		assertEquals("deck should be empty", 0, deck.getDeck().size());
 	}
 
 }

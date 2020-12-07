@@ -86,6 +86,7 @@ public class Comp2
 			System.out.println("No valid move");
 		}
 		
+		//Rebuild hand
 		ArrayList<Card> newHand = new ArrayList<Card>();
 		newHand.addAll(handHearts);
 		newHand.addAll(handClubs);
@@ -101,6 +102,7 @@ public class Comp2
 	{
 		ArrayList<Card> suitCards = new ArrayList<Card>();
 		
+		//Split hand into suits
 		for (Card card : hand) 
 		{
 			if (card.getSuit()== suit)
@@ -116,6 +118,7 @@ public class Comp2
 	{
 		double handWeight = 1.0;
 
+		//Assign a weight to the suit given the values od the cards
 		for(Card card : handSuit) 
 		{
 			if(card.getValue()>12) 
@@ -139,6 +142,7 @@ public class Comp2
 		
 		for(Card card : handSuit) 
 		{
+			//Find and play 7
 			if(card.getValue() == 7) 
 			{
 				tableSuit.add(card);
@@ -147,6 +151,7 @@ public class Comp2
 				turnOver = true;
 				break;
 			}
+			//Find and play valid card
 			else if(tableSuit.size()>0 && turnOver == false) 
 			{
 				for(Card tableCard : tableSuit) 

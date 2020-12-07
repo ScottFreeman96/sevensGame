@@ -24,22 +24,9 @@ public class Comp1Test
 		
 		boolean played = comp1.playCard(Suits.DIAMONDS, diamonds);
 
-		assertEquals(true, played);
-		assertEquals(0, comp1.getComp1Hand().size());
-		assertEquals(2, diamonds.size());
+		assertEquals("playCard should return true", true, played);
+		assertEquals("comp1Hand should be empty", 0, comp1.getComp1Hand().size());
+		assertEquals("Size of diamonds should be 2",2, diamonds.size());
 	}
 	
-//	@Test
-//	public void takeTurn() 
-//	{
-//		Deck deck = new Deck();
-//		Hand hand = new Hand();
-//		Comp1 comp1 = new Comp1();
-//		
-//		int handTotal= 17;
-//		
-//		deck.createDeck();
-//		comp1.setComp1Hand(hand.createHand(deck.getDeck(), handTotal));		
-//	}
-
 }

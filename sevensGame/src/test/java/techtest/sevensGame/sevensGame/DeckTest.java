@@ -2,8 +2,6 @@ package techtest.sevensGame.sevensGame;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 public class DeckTest 
@@ -14,7 +12,7 @@ public class DeckTest
 	{
 		Deck deck = new Deck();
 		deck.createDeck();
-		assertEquals(52, deck.getDeck().size());
+		assertEquals("Size of deck should be 52", 52, deck.getDeck().size());
 	}
 
 }
