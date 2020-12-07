@@ -144,7 +144,7 @@ public class SevensGameMain
 				}
 				turnIndicator = 3;
 			}
-			
+			 
 			//Computer 2 turn
 			if(turnIndicator == 3) 
 			{
